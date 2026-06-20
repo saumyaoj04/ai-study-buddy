@@ -24,9 +24,11 @@ pool
   .catch((err) => {
     console.error("Database Connection Error:", err.message);
   });
+const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
